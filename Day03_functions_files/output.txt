@@ -1,0 +1,5 @@
+Server Report
+==============
+web-01: CPU Usage - 75%
+db-01: CPU Usage - 30%
+cache-01: CPU Usage - 55%
