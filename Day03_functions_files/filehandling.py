@@ -153,9 +153,17 @@ for server in servers:
 '''Exercise 2: Write a function that: Read a file containing server names and print: Checking <server_name> '''
 
 def check_server_from_file(servers):
-    with open("servers.txt","r") as file:
-        output = file.read()
+    
+    try:
+        with open("servers.txt","r") as file:
+            output = file.read()
         print(output)
+    except FileNotFoundError:
+        print("File not found")
+    except Exception as e:
+        print("unexpected error", e)
 
-servers = file.read()
-check_server_from_file(servers)
+    finally:
+        file.close()
+
+check_server_from_file("servers.txt")
